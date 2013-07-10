@@ -137,3 +137,12 @@ dt {
     */
     opacity: 1;
   }
+
+
+
+
+/*personal mods*/
+.modal {
+  background-color: white;
+  font-family: sans-serif;
+}

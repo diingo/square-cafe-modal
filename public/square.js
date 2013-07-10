@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   // Let's intercept the "Checkout" button,
   // and submit behind-the-scenes via AJAX, fancy-style
-  $('form').submit(function(event){
+  $('#menu_form').submit(function(event){
     // Nope, don't reload the page much, kthx
     event.preventDefault();
 
@@ -65,4 +65,26 @@ $(document).ready(function() {
       }
     );
   });
+
+  $('#email_form').submit(function(event) {
+    event.preventDefault();
+    $.post(
+      '/signups',
+      $('#email_form').serialize(),
+
+      // Once we hear back from the server,
+      // update the page with the message received
+      function(response) {
+        $('form').prepend('<strong></strong>').find('strong').append(response);
+      }
+    );
+  });
+
+
 });
+
+
+
+
+
+

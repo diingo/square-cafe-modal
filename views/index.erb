@@ -4,7 +4,20 @@
     <title>Square Cafe</title>
 
     <link rel="stylesheet" type="text/css" href="square.css" />
+
+   
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="square.js"></script>
+
+    <script>
+      $(function() {
+        $( "#dialog-modal" ).dialog({
+          height: 170,
+          modal: true
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="headmast">
@@ -26,7 +39,7 @@
         <h2>What Would You Like?</h2>
 
 
-        <form>
+        <form id="menu_form">
           <div>
             <!-- See this "drink[]" name? -->
             <!-- This is turned into an array of items -->
@@ -61,11 +74,14 @@
 
             <dt>Cost</dt>
             <dd id="cost">$0.00</dd>
+
+            <input type="submit" value="Submit" class="button">
+            <dd class="response"></dd>
           </dl>
         </form>
       </div>
 
-
+<!-- 
       <div class="panel">
         <h2>Where We're At</h2>
         <iframe
@@ -73,10 +89,15 @@
           height="450"
           frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
           src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=austin+tx&amp;aq=&amp;sll=30.307761,-97.753401&amp;sspn=0.679342,1.352692&amp;ie=UTF8&amp;hq=&amp;hnear=Austin,+Travis,+Texas&amp;ll=30.307689,-97.753601&amp;spn=0.679622,1.352692&amp;t=m&amp;z=10&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=austin+tx&amp;aq=&amp;sll=30.307761,-97.753401&amp;sspn=0.679342,1.352692&amp;ie=UTF8&amp;hq=&amp;hnear=Austin,+Travis,+Texas&amp;ll=30.307689,-97.753601&amp;spn=0.679622,1.352692&amp;t=m&amp;z=10" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-      </div>
+      </div> -->
 
+    <div id="dialog-modal" title="Basic modal dialog" class="modal">
+      <p>Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
+      <form id="email_form" >
+        Email: <input type="text" value="Email" class="email" name="email"><input type="submit" value="Submit">
+      </form>
     </div>
-
+      
     <div id="footer">
       Copyright &copy; 2013
     </div>
